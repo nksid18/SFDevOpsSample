@@ -1,5 +1,5 @@
 public class HelloWorld {
     public static void helloWorldMethod(){
-        System.debug('HELLO WORLD Trigger Webhook Sample Pussssssh');
+        System.debug('HELLO WORLD Test for Today');
     }
 }
