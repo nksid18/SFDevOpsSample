@@ -22,21 +22,13 @@ public class SalesforceTest {
 	
 	@Test
 	public void goToSalesforceOrg() {
-		driver.get("https://www.google.com/");
-		String window = driver.getWindowHandle();
-		((JavascriptExecutor) driver).executeScript("alert('Test')");
-		driver.switchTo().alert().accept();
-		driver.switchTo().window(window);
-	    driver.manage().window().maximize();
-	    driver.findElement(By.xpath("//form[@id=\'tsf\']/div[2]/div/div/div/div[2]/input")).click();
-	    driver.findElement(By.xpath("//form[@id=\'tsf\']/div[2]/div/div/div/div[2]/input")).sendKeys("salesforce");
-	    driver.findElement(By.xpath("//form[@id=\'tsf\']/div[2]/div/div/div/div[2]/input")).sendKeys(Keys.ENTER);
-	    {
-	      WebElement element = driver.findElement(By.xpath("//div[@id=\'rso\']/div/div/div/div/a/h3"));
-	      Actions builder = new Actions(driver);
-	      builder.moveToElement(element).perform();
-	    }
-	    driver.findElement(By.xpath("//div[@id=\'rso\']/div/div/table/tbody/tr[2]/td/div/span/h3/a")).click();
+		driver.get("https://login.salesforce.com/");
+	    driver.manage().window().setSize(new Dimension(1325, 1040));
+	    driver.findElement(By.xpath("//div[@id=\'username_container\']/input")).click();
+	    driver.findElement(By.xpath("//div[@id=\'username_container\']/input")).sendKeys("nksid.garcia18@gmail.com");
+	    driver.findElement(By.xpath("//form[@id=\'login_form\']/input")).click();
+	    driver.findElement(By.xpath("//form[@id=\'login_form\']/input")).sendKeys("Password123!");
+	    driver.findElement(By.xpath("//form[@id=\'login_form\']/input[2]")).click();
 		
 	}
 	
